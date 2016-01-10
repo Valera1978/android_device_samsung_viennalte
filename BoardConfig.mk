@@ -39,7 +39,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/viennalte/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/viennalte
 TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_viennalteeur_my_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_viennalteeur_cm_defconfig
 
 # Audio
 BOARD_HAVE_NEW_QCOM_CSDCLIENT := true

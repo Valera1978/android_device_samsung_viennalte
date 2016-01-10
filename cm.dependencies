@@ -3,4 +3,8 @@
     "repository": "android_device_samsung_msm8974-common",
     "target_path": "device/samsung/msm8974-common"
   },
+  {
+    "repository": "android_kernel_samsung_viennalte",
+    "target_path": "kernel/samsung/viennalte"
+  }
 ]
