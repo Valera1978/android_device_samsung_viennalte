@@ -30,6 +30,9 @@ repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
 
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <project name="Valera1978/android_device_samsung_viennalte" path="device/samsung/viennalte" remote="github" revision="cm12.1" />
+  <project name="Valera1978/android_kernel_samsung_viennalte" path="kernel/samsung/viennalte" remote="github" revision="cm12.1" />
+  <project name="Valera1978/android_vendor_samsung_viennalte" path="vendor/samsung/viennalte" remote="github" revision="cm12.1" />
   <project name="CyanogenMod/android_device_samsung_msm8974-common" path="device/samsung/msm8974-common" remote="github" />
   <project name="CyanogenMod/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" />
   <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
