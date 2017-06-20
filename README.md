@@ -38,7 +38,6 @@ repo init -u git://github.com/LineageOS/android.git -b cm-14.1
   <project name="LineageOS/android_device_qcom_common" path="device/qcom/common" remote="github" />
   <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" />
   <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" />
-  <project name="TheMuppets/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" remote="github" />
   <project name="LineageOS/android_external_stlport" path="external/stlport" remote="github" />
 </manifest>
 
