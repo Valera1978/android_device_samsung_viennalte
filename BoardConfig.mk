@@ -65,6 +65,9 @@ BOARD_HARDWARE_CLASS += device/samsung/viennalte/cmhw
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Cyanogen hardware (livedisplay)
+BOARD_USES_CYANOGEN_HARDWARE := true
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/viennalte/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/viennalte/bluetooth/vnd_viennalte.txt
