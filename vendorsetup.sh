@@ -1,1 +1,1 @@
-add_lunch_combo cm_viennalte-userdebug
+add_lunch_combo lineage_viennalte-userdebug
