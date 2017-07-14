@@ -144,6 +144,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Torch
 
+# Root
+PRODUCT_PACKAGES += \
+    su
+
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
