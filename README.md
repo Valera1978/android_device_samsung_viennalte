@@ -28,6 +28,7 @@ repo init -u git://github.com/LineageOS/android.git -b cm-14.1
 
   - Create .repo/local_manifests/roomservice.xml with the following content:
 
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="Valera1978/android_device_samsung_viennalte" path="device/samsung/viennalte" remote="github" revision="cm14.0" />
@@ -40,6 +41,7 @@ repo init -u git://github.com/LineageOS/android.git -b cm-14.1
   <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" />
   <project name="LineageOS/android_external_stlport" path="external/stlport" remote="github" />
 </manifest>
+```
 
 repo sync
 
