@@ -31,9 +31,9 @@ repo init -u git://github.com/LineageOS/android.git -b cm-14.1
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Valera1978/android_device_samsung_viennalte" path="device/samsung/viennalte" remote="github" revision="cm14.0_alt" />
+  <project name="Valera1978/android_device_samsung_viennalte" path="device/samsung/viennalte" remote="github" />
   <project name="Valera1978/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" />
-  <project name="Valera1978/android_vendor_samsung_viennalte" path="vendor/samsung/viennalte" remote="github" revision="cm14.0_alt" />
+  <project name="Valera1978/android_vendor_samsung_viennalte" path="vendor/samsung/viennalte" remote="github" />
   <project name="LineageOS/android_external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="github" />
   <project name="LineageOS/android_device_samsung_msm8974-common" path="device/samsung/msm8974-common" remote="github" />
   <project name="LineageOS/android_device_qcom_common" path="device/qcom/common" remote="github" />
