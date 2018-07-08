@@ -1,6 +1,8 @@
 ## TWRP device tree for Samsung Galaxy Note Pro 12.2 SM-P905
 ## viennalte
 
+https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+
 Add to `.repo/local_manifests/viennalte.xml`:
 
 ```xml
