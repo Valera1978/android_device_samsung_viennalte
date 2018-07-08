@@ -1,1 +1,0 @@
-allow priv_app su_exec:file { read open };

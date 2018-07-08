@@ -1,2 +1,0 @@
-# sysfs
-/sys/devices(/.*)?/input/input[1-2]/enabled             u:object_r:sysfs_hal_pwr:s0
