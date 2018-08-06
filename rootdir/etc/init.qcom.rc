@@ -890,9 +890,9 @@ service qmuxd /vendor/bin/qmuxd
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
+    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf -N \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
-    -I/system/etc/wifi/p2p_supplicant_overlay.conf \
+    -I/vendor/etc/wifi/p2p_supplicant_overlay.conf \
     -puse_p2p_group_interface=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     class main
@@ -997,3 +997,7 @@ on property:persist.sys.ssr.restart_level=3
 
 on property:service.bootanim.exit=1
     #write /sys/module/rmnet_usb/parameters/dump_ctrl_msg 2
+
+on property:init.svc.surfaceflinger=restarting
+    stop hwcomposer-2-1
+    start hwcomposer-2-1

@@ -1,0 +1,27 @@
+#============= audioserver ==============
+allow audioserver audio_device:chr_file { ioctl open };
+allow audioserver ion_device:chr_file { ioctl read };
+
+#============= bluetooth ==============
+allow bluetooth bluetooth_efs_file:file { open read };
+allow bluetooth sysfs:file read;
+allow bluetooth vendor_file:file { execute getattr read };
+
+#============= cameraserver ==============
+allow cameraserver hidl_allocator_hwservice:hwservice_manager find;
+allow cameraserver video_device:chr_file { ioctl open read write };
+
+#============= keystore ==============
+allow keystore vendor_file:file execute;
+
+#============= platform_app ==============
+allow platform_app vendor_file:file { execute getattr open read };
+
+#============= priv_app ==============
+allow priv_app vendor_file:file { open read };
+
+#============= system_app ==============
+allow system_app vendor_file:file { execute getattr open read };
+
+#============= untrusted_app ==============
+allow untrusted_app vendor_file:file { execute read };

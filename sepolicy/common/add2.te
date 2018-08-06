@@ -1,0 +1,31 @@
+#============= audioserver ==============
+allow audioserver vendor_file:file { getattr open };
+
+#============= cameraserver ==============
+allow cameraserver vendor_file:file { getattr read };
+
+#============= mediacodec ==============
+allow mediacodec binder_device:chr_file { ioctl open read write };
+allow mediacodec servicemanager:binder { call transfer };
+
+#============= servicemanager ==============
+allow servicemanager mediacodec:dir search;
+allow servicemanager mediacodec:file { open read };
+
+#============= system_server ==============
+allow system_server vendor_file:file open;
+
+#============= cameraserver ==============
+allow cameraserver vendor_file:file open;
+
+#============= keystore ==============
+allow keystore system_file:dir { open read };
+
+#============= servicemanager ==============
+allow servicemanager mediacodec:process getattr;
+
+#============= system_server ==============
+allow system_server vendor_file:file getattr;
+
+#============= surfaceflinger ==============
+allow surfaceflinger vendor_file:file execute;

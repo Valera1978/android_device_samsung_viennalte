@@ -1,0 +1,8 @@
+#============= audioserver ==============
+allow audioserver vendor_file:file execute;
+
+#============= bootanim ==============
+allow bootanim vendor_file:file { execute getattr read open };
+
+#============= hal_graphics_composer_default ==============
+allow hal_graphics_composer_default sysfs:file { getattr open read };

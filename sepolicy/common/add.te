@@ -1,0 +1,56 @@
+#============= healthd ==============
+allow healthd vendor_file:lnk_file getattr;
+
+#============= mediacodec ==============
+allow mediacodec mediacodec_service:service_manager add;
+
+#============= rfs_access ==============
+allow rfs_access vendor_file:lnk_file getattr;
+
+#============= tzdatacheck ==============
+allow tzdatacheck vendor_file:dir getattr;
+allow tzdatacheck vendor_file:lnk_file { getattr read };
+
+#============= vdc ==============
+allow vdc vendor_file:dir getattr;
+allow vdc vendor_file:file getattr;
+allow vdc vendor_file:lnk_file { getattr read };
+
+#============= fsck ==============
+allow fsck vendor_file:dir getattr;
+allow fsck vendor_file:file getattr;
+allow fsck vendor_file:lnk_file { getattr read };
+
+#============= hal_wifi_default ==============
+allow hal_wifi_default vendor_file:file execute;
+
+#============= init ==============
+allow init cache_block_device:lnk_file relabelto;
+
+#============= rfs_access ==============
+allow rfs_access vendor_file:file execute;
+
+#============= rmt_storage ==============
+allow rmt_storage vendor_file:file execute;
+
+#============= servicemanager ==============
+allow servicemanager vendor_file:lnk_file getattr;
+
+#============= sgdisk ==============
+allow sgdisk vendor_file:dir getattr;
+allow sgdisk vendor_file:file getattr;
+allow sgdisk vendor_file:lnk_file { getattr read };
+
+#============= tee ==============
+allow tee vendor_file:file execute;
+
+#============= toolbox ==============
+allow toolbox vendor_file:dir getattr;
+allow toolbox vendor_file:file getattr;
+allow toolbox vendor_file:lnk_file { getattr read };
+
+#============= tzdatacheck ==============
+allow tzdatacheck vendor_file:file getattr;
+
+#============= vold ==============
+allow vold vendor_file:lnk_file { getattr read };

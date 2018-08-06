@@ -13,6 +13,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+WITH_TREBLE := true
+ifeq ($(WITH_TREBLE), true)
+#    BOARD_VENDORIMAGE_PARTITION_SIZE := 206405632
+    BOARD_VENDORIMAGE_PARTITION_SIZE := 196608000
+    BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+    TARGET_COPY_OUT_VENDOR := vendor
+
+    PRODUCT_FULL_TREBLE_OVERRIDE := true
+    BOARD_VNDK_RUNTIME_DISABLE := true
+    BOARD_VNDK_VERSION := current
+
+    PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
+    PRODUCT_SHIPPING_API_LEVEL := 21
+
+    BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+    TARGET_VENDOR_PROP += device/samsung/viennalte/vendor.prop
+endif
+
 # inherit from common msm8974
 include device/samsung/msm8974-common/BoardConfigCommon.mk
 
@@ -35,7 +53,12 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 
 # Bootloader
+TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
+
+# Display
+#TARGET_USES_GRALLOC1 := true
+#TARGET_USES_HWC2 := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -44,11 +67,12 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_EXFAT_DRIVER := sdfat
 
 # HIDL
-DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 zcache.enabled=1 zcache.compressor=lz4 maxcpus=1
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 zcache.enabled=1 zcache.compressor=lz4 maxcpus=1 androidboot.selinux=permissive
 #BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_PAGESIZE := 2048
@@ -76,7 +100,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13631488
 # us size can be less, reduce system
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2000000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27847015936
-BOARD_CACHEIMAGE_PARTITION_SIZE := 524288000
+BOARD_CACHEIMAGE_PARTITION_SIZE := 206405632
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
