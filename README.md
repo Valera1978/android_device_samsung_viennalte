@@ -19,23 +19,23 @@ Copyright (C) 2017 Valera Chigir <valera1978@tut.by>
 
   - Make a workspace
 
-mkdir cm14
-cd cm14
+mkdir cm15
+cd cm15
 
   - Do repo init & sync
 
-repo init -u git://github.com/LineageOS/android.git -b cm-14.1
+repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
 
   - Create .repo/local_manifests/roomservice.xml with the following content:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Valera1978/android_device_samsung_viennalte" path="device/samsung/viennalte" remote="github" revision="cm14.0_alt" />
-  <project name="Valera1978/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" />
-  <project name="Valera1978/android_vendor_samsung_viennalte" path="vendor/samsung/viennalte" remote="github" revision="cm14.0_alt" />
+  <project name="Valera1978/android_device_samsung_viennalte" path="device/samsung/viennalte" remote="github" revision="lineage-15.1-treble" />
+  <project name="Valera1978/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" revision="lineage-15.1-treble" />
+  <project name="Valera1978/android_vendor_samsung_viennalte" path="vendor/samsung/viennalte" remote="github" revision="lineage-15.1-treble" />
+  <project name="Valera1978/android_device_samsung_msm8974-common" path="device/samsung/msm8974-common" remote="github" revision="lineage-15.1-treble" />
   <project name="LineageOS/android_external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="github" />
-  <project name="LineageOS/android_device_samsung_msm8974-common" path="device/samsung/msm8974-common" remote="github" />
   <project name="LineageOS/android_device_qcom_common" path="device/qcom/common" remote="github" />
   <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" />
   <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" />
@@ -59,7 +59,7 @@ repo sync
 
 . build/envsetup.sh
 
-  - Build cm14
+  - Build cm15
 
 brunch viennalte
 
