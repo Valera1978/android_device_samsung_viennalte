@@ -1,0 +1,84 @@
+#============= bootanim ==============
+allow bootanim sysfs:file { getattr open read };
+
+#============= fsck ==============
+allow fsck block_device:blk_file ioctl;
+
+#============= hwservicemanager ==============
+allow hwservicemanager init:dir search;
+allow hwservicemanager init:file { open read };
+allow hwservicemanager init:process getattr;
+
+#============= init ==============
+allow init efs_file:dir mounton;
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder { call transfer };
+allow init proc:file { setattr write };
+allow init sysfs:file setattr;
+allow init sysfs_mdnie:file { open read write };
+allow init sysfs_sec_epen:file { open read };
+allow init sysfs_sec_tsp:file { open read };
+
+#============= installd ==============
+allow installd device:file { open write };
+
+#============= mediaserver ==============
+allow mediaserver device:dir { open read };
+allow mediaserver mm-qcamerad:unix_dgram_socket sendto;
+allow mediaserver system_data_file:sock_file write;
+allow mediaserver thermal_socket:sock_file write;
+
+#============= mm-qcamerad ==============
+allow mm-qcamerad system_data_file:sock_file { create unlink };
+
+#============= netd ==============
+allow netd device:file { open write };
+
+#============= rmt_storage ==============
+allow rmt_storage sysfs:dir { open read };
+allow rmt_storage sysfs:file { getattr open read };
+
+#============= surfaceflinger ==============
+allow surfaceflinger default_android_service:service_manager find;
+allow surfaceflinger sysfs:file read;
+
+#============= tee ==============
+allow tee block_device:blk_file getattr;
+
+#============= thermal-engine ==============
+allow thermal-engine sysfs:dir { open read };
+allow thermal-engine sysfs:file { getattr open read };
+
+#============= time_daemon ==============
+allow time_daemon self:capability { setgid setuid };
+allow time_daemon time_data_file:file { append getattr open read };
+
+#============= ueventd ==============
+allow ueventd proc:file { getattr open read };
+
+#============= vendor_init ==============
+allow vendor_init audio_data_file:dir setattr;
+allow vendor_init bluetooth_data_file:dir setattr;
+allow vendor_init dhcp_data_file:dir setattr;
+allow vendor_init radio_data_file:dir { remove_name search write add_name getattr };
+allow vendor_init radio_data_file:lnk_file unlink;
+allow vendor_init system_data_file:dir setattr;
+allow vendor_init system_data_file:file open;
+allow vendor_init time_data_file:dir setattr;
+allow vendor_init tombstone_data_file:dir setattr;
+allow vendor_init wifi_data_file:dir setattr;
+allow vendor_init wifi_data_file:file { getattr open setattr write };
+allow vendor_init wpa_socket:dir setattr;
+allow vendor_init wifi_data_file:file create;
+
+#============= zygote ==============
+allow zygote proc_cmdline:file { getattr read };
+
+#============= rild ==============
+allow rild system_data_file:dir { add_name remove_name write };
+allow rild system_data_file:file { open read };
+
+#============= system_server ==============
+allow system_server qmuxd:unix_stream_socket connectto;
+allow system_server qmuxd_socket:dir { add_name write };
+allow system_server qmuxd_socket:sock_file { create setattr write };

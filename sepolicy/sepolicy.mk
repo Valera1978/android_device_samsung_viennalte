@@ -14,6 +14,11 @@
 # limitations under the License.
 #
 
+#include device/qcom/sepolicy-legacy-um/sepolicy.mk
+
 # Board specific SELinux policy variable definitions
+#BOARD_SEPOLICY_DIRS += \
+#    device/samsung/viennalte/sepolicy/common
+
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/viennalte/sepolicy/common
+    device/samsung/viennalte/sepolicy/common_tmp

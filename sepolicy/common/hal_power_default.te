@@ -1,3 +1,5 @@
+allow hal_power_default sysfs_hal_pwr:file w_file_perms;
+
 allow hal_power_default sysfs:file write;
 allow hal_power_default sysfs_input:dir search;
 allow hal_power_default sysfs_input:file { write open };

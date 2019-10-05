@@ -1,0 +1,3 @@
+/firmware(/.*)?              u:object_r:firmware_file:s0
+/firmware-modem(/.*)?        u:object_r:firmware_file:s0
+/misc(/.*)?                  u:object_r:persist_file:s0

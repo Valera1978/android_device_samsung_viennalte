@@ -1,1 +1,6 @@
+get_prop(priv_app, camera_prop)
+
+allow priv_app device:dir r_dir_perms;
+allow priv_app proc_interrupts:file r_file_perms;
+
 allow priv_app su_exec:file { read open };

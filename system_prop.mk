@@ -1,3 +1,6 @@
+# Memory optimizations
+ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Art
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false

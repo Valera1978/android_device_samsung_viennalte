@@ -1,2 +1,90 @@
+# block devices
+/dev/block/platform/msm_sdcc\.1/by-name/efs             u:object_r:efs_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/fota            u:object_r:misc_block_device:s0
+
+# data files
+/data/.cid.info                                         u:object_r:wifi_data_file:s0
+/data/.wifiver.info                                     u:object_r:wifi_data_file:s0
+
+# device nodes
+/dev/batch_io                                           u:object_r:sensors_device:s0
+/dev/bcm2079x                                           u:object_r:nfc_device:s0
+/dev/btlock                                             u:object_r:bluetooth_device:s0
+/dev/pn547                                              u:object_r:nfc_device:s0
+/dev/rfkill                                             u:object_r:wlan_device:s0
+/dev/sec-nfc                                            u:object_r:nfc_device:s0
+
+# efs files
+/efs/bluetooth(/.*)?                                    u:object_r:bluetooth_efs_file:s0
+/efs/wifi(/.*)?                                         u:object_r:wifi_efs_file:s0
+
+# executeables
+/system/vendor/bin/macloader                            u:object_r:macloader_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service.samsung8974        u:object_r:hal_sensors_default_exec:s0
+
+# firmware
+/system/vendor/firmware/bcm(.*).hcd                     u:object_r:bt_fw_file:s0
+/system/vendor/firmware/bcm2079x(.*).ncd                u:object_r:nfc_fw_file:s0
+/system/vendor/firmware/libpn547_fw.so                  u:object_r:nfc_fw_file:s0
+
+# sysfs
+/sys/devices/[a-f0-9]+\.uart(/.*)?                               u:object_r:sysfs_msmuart_file:s0
+/sys/devices/platform/bcm[0-9]+_bluetooth/rfkill/rfkill0(/.*)?   u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/virtual/camera(/.*)?                                u:object_r:sysfs_camera:s0
+/sys/devices/virtual/input(/.*)?                                 u:object_r:sysfs_input:s0
+/sys/module/dhd/parameters/firmware_path                         u:object_r:sysfs_wifi_writeable:s0
+/sys/module/dhd/parameters/nvram_path                            u:object_r:sysfs_wifi_writeable:s0
+
+# sysfs - battery/charger
+/sys/devices/battery\.[0-9]+/power_supply(/.*)?         u:object_r:sysfs_batteryinfo:s0
+/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/max[a-z0-9]+-charger/power_supply(/.*)? u:object_r:sysfs_batteryinfo:s0
+/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/power_supply(/.*)?                      u:object_r:sysfs_batteryinfo:s0
+/sys/devices/msm_dwc3/power_supply(/.*)?                u:object_r:sysfs_batteryinfo:s0
+
+# sysfs - block/storage
+/sys/devices/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/power(/.*)?                                   u:object_r:sysfs_mmc_host:s0
+
+# sysfs - cpu/perf
+/sys/devices/system/soc/soc0(/.*)?                      u:object_r:sysfs_socinfo:s0
+
+# sysfs - graphics/panel
+/sys/class/mhl(/.*)?                                    u:object_r:sysfs_graphics:s0
+/sys/devices/mdp\.[0-9](/.*)?                           u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb0/csc_cfg               u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/lcd/panel(/.*)?                    u:object_r:sysfs_graphics:s0
+
+# sysfs - iio
+/sys/bus/iio/devices(/.*)?                                                          u:object_r:sysfs_iio:s0
+/sys/devices/[a-f0-9]+\.spi/spi_master/spi[0-9]+/spi[0-9]+\.0/iio:device[0-9](/.*)? u:object_r:sysfs_iio:s0
+
+# sysfs - leds
+/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/leds(/.*)?  u:object_r:sysfs_leds:s0
+/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/max[a-z0-9]+-led/leds(/.*)? u:object_r:sysfs_leds:s0
+
+# sysfs - mdnie
+/sys/devices/virtual/mdnie/mdnie(/.*)?                  u:object_r:sysfs_mdnie:s0
+
+# sysfs - sec
+/sys/devices/platform/sec-thermistor(/.*)?              u:object_r:sysfs_sec_thermistor:s0
+/sys/devices/virtual/sec/bamdmux(/.*)?                  u:object_r:sysfs_sec_bamdmux:s0
+/sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_sec_led:s0
+/sys/devices/virtual/sec/sec_barcode_emul(/.*)?         u:object_r:sysfs_sec_barcode_emul:s0
+/sys/devices/virtual/sec/sec_epen(/.*)?                 u:object_r:sysfs_sec_epen:s0
+/sys/devices/virtual/sec/sec_ir(/.*)?                   u:object_r:sysfs_sec_ir:s0
+/sys/devices/virtual/sec/sec_key(/.*)?                  u:object_r:sysfs_sec_key:s0
+/sys/devices/virtual/sec/sec_touchkey(/.*)?             u:object_r:sysfs_sec_touchkey:s0
+/sys/devices/virtual/sec/switch(/.*)?                   u:object_r:sysfs_sec_switch:s0
+/sys/devices/virtual/sec/tsp(/.*)?                      u:object_r:sysfs_sec_tsp:s0
+
+# sysfs - sensors
+/sys/devices/virtual/sensors(/.*)?                      u:object_r:sysfs_sensors:s0
+
+# sysfs - usb
+/sys/devices/virtual/host_notify/usb_otg(/.*)?               u:object_r:sysfs_usb_otg:s0
+
 # sysfs
 /sys/devices(/.*)?/input/input[1-2]/enabled             u:object_r:sysfs_hal_pwr:s0
+
+/firmware(/.*)?              u:object_r:firmware_file:s0
+/firmware-modem(/.*)?        u:object_r:firmware_file:s0
+/misc(/.*)?                  u:object_r:persist_misc_file:s0
