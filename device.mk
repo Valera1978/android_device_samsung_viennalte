@@ -284,7 +284,7 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi@1.0-service.8974 \
     hostapd \
     wificond \
     wpa_supplicant \
