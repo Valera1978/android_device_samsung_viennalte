@@ -139,13 +139,20 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
+# SDClang
+TARGET_USE_SDCLANG := true
+
 # Legacy BLOB Support
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-TARGET_LD_SHIM_LIBS += /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so
+
+TARGET_LD_SHIM_LIBS = \
+    /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so
+
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22 \
-    /system/vendor/bin/hw/rild=27
+    /system/vendor/bin/hw/rild=27 \
+    /system/vendor/lib/libarcsoft_nighthawk.so=22
 
 # Lineage Hardware
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(LOCAL_PATH)/lineagehw|**/*.java
@@ -159,7 +166,6 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
-TARGET_RIL_VARIANT := caf
 
 # Security patch level - P905XXUABPE2
 VENDOR_SECURITY_PATCH := 2016-05-01
@@ -190,13 +196,12 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-WIFI_BAND := 802_11_ABG
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/etc/wifi/bcmdhd_sta.bin nvram_path=/vendor/etc/wifi/nvram_net.txt"
 WIFI_DRIVER_MODULE_AP_ARG   := "firmware_path=/vendor/etc/wifi/bcmdhd_apsta.bin nvram_path=/vendor/etc/wifi/nvram_net.txt"
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/etc/wifi/bcmdhd_apsta.bin"
-WPA_SUPPLICANT_USE_HIDL     := true
+WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
 # inherit from the proprietary version
 -include vendor/samsung/viennalte/BoardConfigVendor.mk
