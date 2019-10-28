@@ -41,7 +41,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.cabl=1 \
     ro.secwvk=144 \
     ro.sf.lcd_density=320 \
-    debug.hwui.use_buffer_age=false
+    debug.hwui.use_buffer_age=false \
+    debug.sf.enable_gl_backpressure=1
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
