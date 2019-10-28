@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
-#ifndef SAP_SERVICE_H
-#define SAP_SERVICE_H
 
-#include <telephony/ril.h>
-#include <ril_internal.h>
-#include <RilSapSocket.h>
-#include <hardware/ril/librilutils/proto/sap-api.pb.h>
+#include <binder/IInterface.h>
 
-namespace sap {
+extern "C" {
 
-void registerService(const RIL_RadioFunctions *callbacks);
-void processResponse(MsgHeader *rsp, RilSapSocket *sapSocket);
-void processUnsolResponse(MsgHeader *rsp, RilSapSocket *sapSocket);
+void _ZN7android10IInterface8asBinderEv(void *retval, void* self) {
+    android::sp<android::IBinder> *ret = new(retval) android::sp<android::IBinder>;
+    *ret = android::IInterface::asBinder((android::IInterface*)self);
+}
 
-}   // namespace android
+void _ZNK7android10IInterface8asBinderEv(void *retval, void *self) {
+    android::sp<android::IBinder> *ret = new(retval) android::sp<android::IBinder>;
+    *ret = android::IInterface::asBinder((android::IInterface*)self);
+}
 
-#endif  // RIL_SERVICE_H
+} // extern "C"

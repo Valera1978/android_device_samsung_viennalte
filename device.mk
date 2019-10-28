@@ -190,6 +190,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
     gps.msm8974
 
+PRODUCT_PACKAGES += \
+    libshim_binder
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/flp.conf \
     $(LOCAL_PATH)/gps/etc/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
