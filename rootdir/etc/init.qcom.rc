@@ -54,7 +54,7 @@ on init
 
 on fs
     mount_all /vendor/etc/fstab.qcom
-    swapon_all fstab.qcom
+    swapon_all /vendor/etc/fstab.qcom
 
     restorecon_recursive /efs
 
