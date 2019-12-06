@@ -132,6 +132,9 @@ DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 # Netd
 TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
+
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
