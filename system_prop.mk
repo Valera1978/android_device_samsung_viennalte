@@ -1,5 +1,7 @@
 # Memory optimizations
-ro.vendor.qti.sys.fw.bservice_enable=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.am.reschedule_service=true \
+    ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Art
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -34,6 +36,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=2m \
     dalvik.vm.heapmaxfree=8m
+
+# Limit dex2oat threads to improve thermals
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-threads=2 \
+    dalvik.vm.image-dex2oat-threads=4
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \

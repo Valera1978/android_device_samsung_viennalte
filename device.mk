@@ -158,7 +158,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl \
     camera.msm8974 \
-    libxml2 \
     Snap
 
 PRODUCT_PACKAGES += \
@@ -288,14 +287,17 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Misc dependency packages
+PRODUCT_PACKAGES += \
+    libbson \
+    libnl_2 \
+    libtinyxml
+
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.2 \
-    android.hardware.radio.config@1.0 \
     libsecnativefeature \
     libcnefeatureconfig \
     librmnetctl \
-    libprotobuf-cpp-full \
     libxml2
 
 # Ramdisk

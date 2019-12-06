@@ -57,7 +57,7 @@ TARGET_KERNEL_CONFIG := lineage_viennalteeur_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 
 # Fixes Wifi-Mobile Data toggle issue
-#MALLOC_SVELTE := true
+MALLOC_SVELTE := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -103,24 +103,27 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13631488
 # us size can be less, reduce system
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2000000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27847015936
-BOARD_CACHEIMAGE_PARTITION_SIZE := 524288000
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 209715200
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS += cache firmware firmware-modem efs misc
+BOARD_ROOT_EXTRA_FOLDERS += firmware firmware-modem efs misc
 
 # Graphics
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
-OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
-TARGET_USES_C2D_COMPOSITION := true
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
+TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_ION := true
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
+USE_OPENGL_RENDERER := true
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
@@ -173,6 +176,7 @@ BOARD_PROVIDES_LIBRIL := true
 VENDOR_SECURITY_PATCH := 2016-05-01
 
 # Recovery
+LZMA_RAMDISK_TARGETS := recovery
 BOARD_HAS_DOWNLOAD_MODE := true
 
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../$(LOCAL_PATH)/recovery/recovery_keys.c
@@ -187,9 +191,6 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 # SELinux
 include $(LOCAL_PATH)/sepolicy/sepolicy.mk
 
-# LineageHW
-BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
-
 # Wifi
 #BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_WLAN_DEVICE := bcmdhd
@@ -203,7 +204,6 @@ WIFI_DRIVER_MODULE_AP_ARG   := "firmware_path=/vendor/etc/wifi/bcmdhd_apsta.bin 
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/etc/wifi/bcmdhd_apsta.bin"
-WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
 # inherit from the proprietary version
 -include vendor/samsung/viennalte/BoardConfigVendor.mk
