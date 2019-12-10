@@ -884,6 +884,11 @@ service qmuxd /vendor/bin/qmuxd
     user radio
     group radio audio bluetooth gps oem_2950 log
 
+service netmgrd /vendor/bin/netmgrd
+    class core
+    user root
+    group root wifi wakelock radio inet
+
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 \
     -g@android:wpa_wlan0
