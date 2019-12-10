@@ -159,8 +159,7 @@ TARGET_LD_SHIM_LIBS += \
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22 \
-    /system/vendor/bin/hw/rild=27 \
-    /system/vendor/lib/libarcsoft_nighthawk.so=22
+    /system/vendor/bin/hw/rild=27
 
 # Lineage Hardware
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(LOCAL_PATH)/lineagehw|**/*.java
@@ -171,9 +170,6 @@ TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 # Power HAL
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
 TARGET_POWERHAL_VARIANT := qcom
-
-# Radio
-BOARD_PROVIDES_LIBRIL := true
 
 # Security patch level - P905XXUABPE2
 VENDOR_SECURITY_PATCH := 2016-05-01
