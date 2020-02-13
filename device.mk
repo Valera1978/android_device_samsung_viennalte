@@ -159,8 +159,7 @@ PRODUCT_COPY_FILES += \
 
 # IR Blaster
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
-    consumerir.msm8974
+    android.hardware.ir@1.0-service.samsung
 
 # Input device
 PRODUCT_COPY_FILES += \
