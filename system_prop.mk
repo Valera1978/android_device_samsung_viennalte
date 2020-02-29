@@ -25,8 +25,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dalvik heap
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=512m \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=2m \
@@ -40,6 +40,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
     debug.hwui.use_buffer_age=false
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    lockscreen.rot_override=true
+
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qc_nlp_in_use=0 \
@@ -48,7 +51,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.izat.service_mask=0x0
 
 # Memory optimizations
-ro.vendor.qti.am.reschedule_service=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.am.reschedule_service=true \
+    ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -56,6 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.timed.enable=true \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Radio
