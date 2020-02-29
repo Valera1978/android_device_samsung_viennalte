@@ -95,7 +95,9 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    libsecnativefeature
+    libsecnativefeature \
+    libcnefeatureconfig \
+    librmnetctl
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -129,10 +131,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=adb \
     ro.adb.secure=0 \
     ro.secure=0
-
-# Root
-PRODUCT_PACKAGES += \
-    su
 
 # Root
 PRODUCT_PACKAGES += \
