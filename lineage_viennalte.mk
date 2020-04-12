@@ -28,14 +28,3 @@ PRODUCT_DEVICE := viennalte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SM-P905
-
-PRODUCT_GMS_CLIENTID_BASE := android-samsung
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="viennaltexx-user 5.0.2 LRX22G P905XXUABPE2 release-keys"
-
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := samsung/viennaltexx/viennalte:5.0.2/LRX22G/P905XXUABPE2:user/release-keys
-#BUILD_FINGERPRINT := Xiaomi/sagit/sagit:7.1.1/NMF26X/V8.2.17.0.NCACNEC:user/release-keys
-
-TARGET_VENDOR := Samsung

@@ -57,7 +57,7 @@ TARGET_KERNEL_CONFIG := lineage_viennalteeur_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8974
+TARGET_INIT_VENDOR_LIB := libinit_viennalte
 
 # Legacy BLOB Support
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
@@ -66,9 +66,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22 \
     /system/vendor/bin/hw/rild=27
-
-# Lineage Hardware
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(LOCAL_PATH)/lineagehw|**/*.java
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -106,6 +103,9 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # SELinux
 include $(LOCAL_PATH)/sepolicy/sepolicy.mk
+
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # TWRP Support - Optional
 ifeq ($(WITH_TWRP),true)
