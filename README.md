@@ -1,7 +1,7 @@
 ## TWRP device tree for Samsung Galaxy Note Pro 12.2 SM-P905
 ## viennalte
 
-https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-9.0
 
 Add to `.repo/local_manifests/viennalte.xml`:
 
@@ -17,6 +17,11 @@ Then run `repo sync` to check it out.
 To build:
 
 ```sh
+export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch omni_viennalte-eng; mka recoveryimage
+```
+or
+```sh
+export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 lunch omni_viennalte-eng
 mka recoveryimage
