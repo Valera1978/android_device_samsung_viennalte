@@ -30,6 +30,7 @@ TARGET_NO_RADIOIMAGE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
 # Architecture
 TARGET_ARCH := arm
@@ -185,6 +186,11 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # SELinux
 include $(LOCAL_PATH)/sepolicy/sepolicy.mk
+
+SELINUX_IGNORE_NEVERALLOWS := true
+
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Wifi
 #BOARD_HAVE_SAMSUNG_WIFI := true
