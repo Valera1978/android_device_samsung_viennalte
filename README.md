@@ -24,7 +24,7 @@ cd cm17
 
   - Do repo init & sync
 
-repo init -u git://github.com/LineageOS/android.git -b cm-17.0
+repo init -u git://github.com/LineageOS/android.git -b lineage-17.0
 
   - Create .repo/local_manifests/roomservice.xml with the following content:
 
@@ -34,7 +34,8 @@ repo init -u git://github.com/LineageOS/android.git -b cm-17.0
   <project name="Valera1978/android_device_samsung_viennalte" path="device/samsung/viennalte" remote="github" />
   <project name="Valera1978/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" />
   <project name="Valera1978/android_vendor_samsung_viennalte" path="vendor/samsung/viennalte" remote="github" />
-  <project name="Valera1978/android_hardware_samsung" path="hardware/samsung" remote="github" />
+  <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" />
+  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" />
 </manifest>
 ```
 
