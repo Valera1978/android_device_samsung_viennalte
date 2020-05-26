@@ -158,7 +158,6 @@ void *writerTask(void* ptr) {
                 ALOGV("writerTask ignored error %d from %s", eventsPolled, device->common.module->name);
                 ALOGE("ERROR: Fix %s so it does not return error from poll()", device->common.module->name);
             }
-            pthread_mutex_unlock(&queue_mutex);
             continue;
         }
         pthread_mutex_lock(&queue_mutex);
