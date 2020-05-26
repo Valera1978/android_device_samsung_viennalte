@@ -25,14 +25,4 @@
         <boolean name="show_cdma_choices_bool" value="true" />
         <boolean name="show_apn_setting_cdma_bool" value="true" />
     </carrier_config>
-
-    <carrier_config mcc="204" mnc="04" gid1="BAE0000000000000">
-        <boolean name="disable_cdma_activation_code_bool" value="true" />
-    </carrier_config>
-    <carrier_config mcc="310" mnc="004">
-        <boolean name="disable_cdma_activation_code_bool" value="true" />
-    </carrier_config>
-    <carrier_config mcc="310" mnc="480">
-        <boolean name="disable_cdma_activation_code_bool" value="true" />
-    </carrier_config>
 </carrier_config_list>

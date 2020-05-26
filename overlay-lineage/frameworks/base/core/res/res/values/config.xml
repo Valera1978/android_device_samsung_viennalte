@@ -21,4 +21,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Whether to allow process with media UID to access CameraServiceProxy -->
     <bool name="config_allowMediaUidForCameraServiceProxy">true</bool>
+
+    <!-- Certain sensor firmwares break with having a batch
+         size set. By setting this to false, devices can opt
+         out of setting a batch size, which fixes rotation. -->
+    <bool name="config_useDefaultBatchingForAccel">false</bool>
 </resources>
