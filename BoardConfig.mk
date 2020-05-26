@@ -56,9 +56,6 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := lineage_viennalteeur_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 
-# Fixes Wifi-Mobile Data toggle issue
-MALLOC_SVELTE := true
-
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
@@ -147,9 +144,6 @@ BOARD_USES_QCOM_HARDWARE := true
 # SDClang
 TARGET_USE_SDCLANG := true
 
-# Legacy BLOB Support
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-
 TARGET_LD_SHIM_LIBS = \
     /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so
 
@@ -169,7 +163,6 @@ TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Power HAL
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
-TARGET_POWERHAL_VARIANT := qcom
 
 # Security patch level - P905XXUABPE2
 VENDOR_SECURITY_PATCH := 2016-05-01
